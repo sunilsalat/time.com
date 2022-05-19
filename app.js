@@ -27,7 +27,7 @@ const server = createServer((req, res) => {
           t.forEach((e) => {
             news.push({
               title: e.childNodes[1].children[0].innerHTML,
-              link: `https://time.com/${e.childNodes[1].href}`,
+              link: `https://time.com${e.childNodes[1].href}`,
             });
           });
 
