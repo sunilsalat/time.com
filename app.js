@@ -9,6 +9,7 @@ const server = createServer((req, res) => {
     http
       .request({ host: "time.com", path: "/" }, (response) => {
         let str = "";
+
         response.on("data", (chunk) => {
           str += chunk;
         });
@@ -22,6 +23,7 @@ const server = createServer((req, res) => {
 
           const news = [];
 
+          // creating news list out of ChildNodes
           t.forEach((e) => {
             news.push({
               title: e.childNodes[1].children[0].innerHTML,
